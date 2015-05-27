@@ -32,6 +32,10 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 	 */
 	private $realm;
 
+	/**
+	 * Option to preserve the realm when returning the principal
+	 * in the attribute array.
+	 */
 	private $stripRealm;
 
 
