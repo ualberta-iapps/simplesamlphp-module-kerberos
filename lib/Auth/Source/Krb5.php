@@ -32,6 +32,8 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 	 */
 	private $realm;
 
+	private $stripRealm;
+
 
 	/**
 	 * Constructor for this authentication source.
@@ -68,6 +70,7 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 
 		$this->krb5 = new KRB5CCache();
 		$this->realm = '@'. $config['realm'];
+		$this->stripRealm = $config['stripRealm'];
 
 	}
 
@@ -100,8 +103,9 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 
 		try{
 			$this->krb5->initPassword($principal, $password);
+			$uid = ($this->stripRealm)? $this->stripScope($this->krb5->getPrincipal()) : $this->krb5->getPrincipal();
 			$attributes = array(
-				'uid' => array($this->stripScope($this->krb5->getPrincipal())),
+				'uid' => array($uid),
 			);
 
 			return $attributes;
