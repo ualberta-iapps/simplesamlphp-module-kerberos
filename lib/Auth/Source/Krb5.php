@@ -23,10 +23,13 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 	private $config;
 
 	/**
-	 * Kerberos KDC Authentication
+	 * Kerberos KDC authentication resource
 	 */
-	private $auth;
+	private $krb5;
 
+	/**
+	 * Kerberos realm
+	 */
 	private $realm;
 
 
@@ -43,8 +46,9 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 		/* Call the parent constructor first, as required by the interface. */
 		parent::__construct($info, $config);
 
+		/* Ensure that the krb5 PHP module is installed and loaded */
 		if(!extension_loaded('krb5')){
-			throw new Exception('Missing required PHP module krb5');
+			throw new Exception('Missing required PHP module krb5 for authentication source '. $this->authId);
 		}
 
 		/* Make sure that all required parameters are present. */
@@ -62,7 +66,7 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 			}
 		}
 
-		$this->auth = new KRB5CCache();
+		$this->krb5 = new KRB5CCache();
 		$this->realm = '@'. $config['realm'];
 
 	}
@@ -95,9 +99,9 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 		$principal = $this->stripScope($username) . $this->realm;
 
 		try{
-			$this->auth->initPassword($principal, $password);
+			$this->krb5->initPassword($principal, $password);
 			$attributes = array(
-				'uid' => array($this->stripScope($this->auth->getPrincipal())),
+				'uid' => array($this->stripScope($this->krb5->getPrincipal())),
 			);
 
 			return $attributes;
