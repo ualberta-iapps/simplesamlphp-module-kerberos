@@ -1,0 +1,18 @@
+{
+    "name": "simplesamlphp-module-kerberos",
+    "description": "Kerberos authentication for SimpleSAMLphp",
+    "keywords": [ "kerberos", "kerb", "krb5", "krb" ],
+    "homepage": "http://github.com/tdiscuit/simplesamlphp-mod-kerberos",
+    "type": "simplesamlphp-module",
+     "authors": [
+        {
+            "name": "Tyler Antonio",
+            "email": "contact@tanton.io",
+            "homepage": "http://tanton.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+    }
+}
