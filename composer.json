@@ -4,6 +4,7 @@
     "type": "simplesamlphp-module",
     "keywords": [ "kerberos", "kerb", "krb5", "krb" ],
     "homepage": "https://github.com/ualberta-iapps/simplesamlphp-mod-kerberos",
+    "license": "BSD-4-Clause",
     "authors": [
         {
             "name": "Tyler Antonio",
