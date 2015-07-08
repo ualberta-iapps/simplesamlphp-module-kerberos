@@ -1,18 +1,17 @@
 {
-    "name": "simplesamlphp-module-kerberos",
-    "description": "Kerberos authentication for SimpleSAMLphp",
+    "name": "ualberta-iapps/simplesamlphp-mod-kerberos",
+    "description": "Kerberos authentication module for SimpleSAMLphp",
+    "simplesamlphp-module",
     "keywords": [ "kerberos", "kerb", "krb5", "krb" ],
-    "homepage": "http://github.com/tdiscuit/simplesamlphp-mod-kerberos",
-    "type": "simplesamlphp-module",
-     "authors": [
+    "homepage": "https://github.com/ualberta-iapps/simplesamlphp-mod-kerberos",
+    "authors": [
         {
             "name": "Tyler Antonio",
-            "email": "contact@tanton.io",
-            "homepage": "http://tanton.io",
+            "email": "tantonio@ualberta.ca",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.3.0"
     }
 }
