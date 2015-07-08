@@ -1,7 +1,7 @@
 {
     "name": "ualberta-iapps/simplesamlphp-mod-kerberos",
     "description": "Kerberos authentication module for SimpleSAMLphp",
-    "simplesamlphp-module",
+    "type": "simplesamlphp-module",
     "keywords": [ "kerberos", "kerb", "krb5", "krb" ],
     "homepage": "https://github.com/ualberta-iapps/simplesamlphp-mod-kerberos",
     "authors": [
