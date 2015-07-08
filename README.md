@@ -1,7 +1,6 @@
-Kerberos Module
-==================
-
-The kerberos module allows users to authenticate against an MIT Kerberos v5 KDC.
+simplesamlphp-mod-kerberos
+==========================
+Kerberos 5 authentication module for SimpleSAMLphp
 
 Prerequisites
 -------------
