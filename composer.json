@@ -1,5 +1,5 @@
 {
-    "name": "ualberta-iapps/simplesamlphp-mod-kerberos",
+    "name": "ualberta-iapps/simplesamlphp-module-kerberos",
     "description": "Kerberos authentication module for SimpleSAMLphp",
     "type": "simplesamlphp-module",
     "keywords": [ "kerberos", "kerb", "krb5", "krb" ],
