@@ -38,7 +38,6 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 	 */
 	private $stripRealm;
 
-
 	/**
 	 * Constructor for this authentication source.
 	 *
@@ -112,9 +111,11 @@ class sspmod_kerberos_Auth_Source_Krb5 extends sspmod_core_Auth_UserPassBase {
 				'uid' => array($uid),
 			);
 
+			SimpleSAML_Logger::stats('User \''. $username .'\' successfully authenticated from '.$_SERVER['REMOTE_ADDR'].'.');
 			return $attributes;
 		}
 		catch (Exception $error){
+			SimpleSAML_Logger::stats('User \''. $username .'\' failed authentication from '.$_SERVER['REMOTE_ADDR'].'.');
 			throw new SimpleSAML_Error_Error('WRONGUSERPASS');
 		}
 	}
