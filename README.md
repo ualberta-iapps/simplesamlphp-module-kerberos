@@ -1,4 +1,4 @@
-simplesamlphp-mod-kerberos
+simplesamlphp-module-kerberos
 ==========================
 Kerberos 5 authentication module for SimpleSAMLphp
 
